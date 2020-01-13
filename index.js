@@ -48,7 +48,6 @@ server.get('/api/users/:id', (req, res) => {
         })
 })
 // insert(user)
-// update(id, user
 
 // create a Hub
 server.post('/api/users', (req, res) => {
@@ -65,12 +64,15 @@ server.post('/api/users', (req, res) => {
             res.status(500).json({ errorMessage: 'couldn\'t create the user'})
         })
 })
+// update(id, user)
+
+// remove(id)
 // delete a Hub
 server.delete('/api/users/:id', (req, res) => {
     const id = req.params.id
     Users.remove(id)
         .then(result => {
-            // not sending data back
+            // only sent a 1 back
             res.status(200).json(result)
         })
         .catch(err => {
