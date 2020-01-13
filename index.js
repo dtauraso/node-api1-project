@@ -56,7 +56,7 @@ server.post('/api/users', (req, res) => {
 
 
     // never trust the client, validate the data.  for now we trust the client for the demo
-    Users.add(userData)
+    Users.insert(userData)
         .then(users => {
             res.status(201).json(users)
         })
